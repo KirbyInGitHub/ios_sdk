@@ -87,9 +87,7 @@ private extension AdmitadRequestStorage {
 private extension AdmitadRequestStorage {
     func saveRequests() {
         let queue = DispatchQueue.global(qos: .utility)
-        queue.async {
-            AdmitadRequestStorage.storedRequests = self.requests
-        }
+        AdmitadRequestStorage.storedRequests = self.requests
     }
 	
     static var storedRequests: [AdmitadRequest] {
